@@ -81,14 +81,14 @@
 
   .Half-Car{
     width: 50%;
-    height: 100%;
+    height: 30%;
     object-fit: contain;
     padding-left: 10px;
-    padding-top: 50px;
+    padding-top: 1px;
   }
 
   .Errors-Card
-  {
+  { 
     width: 20%;
     height: 50%;
   }
@@ -121,7 +121,7 @@
     color: floralwhite;
 }
 
-.address{
+.information{
     font-size: 80%;
     margin: 0px;
     color: black;
