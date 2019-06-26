@@ -13,6 +13,13 @@
     background-color: #000000;    
   }
 
+  .Logo---Full2 {
+    padding-top: 5px;
+  
+    float:left; 
+    background-color: #000000;    
+  }
+
   .Genealogy {
     padding-top: 3px;
     width: 162px;
@@ -96,9 +103,9 @@
 
   .ECU{
     width: 50%;
-    height: 300px;
+    height: 50%;
     object-fit: contain;
-    padding-left: 100px;
+    padding-left: 30%;
     padding-top: 30px;
   }
 
