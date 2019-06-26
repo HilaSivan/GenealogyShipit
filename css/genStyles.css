@@ -6,19 +6,12 @@
   }
 
 .Logo---Full {
-    padding-top: 10px;
-    width: 131px;
-    height: 30px;  
+    padding-top: 18px;   
     float:left; 
     background-color: #000000;    
   }
 
-  .Logo---Full2 {
-    padding-top: 5px;
-  
-    float:left; 
-    background-color: #000000;    
-  }
+ 
 
   .Genealogy {
     padding-top: 3px;
@@ -86,29 +79,42 @@
   }
 
   .Full-Car{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
-    padding-left: 10px;
-    padding-top: 50px;
+    padding-left: 30px;
+    padding-top: 30px;
   }
 
+  .Gif
+  {
+    width: 600px;
+    height: 500px;
+    object-fit: contain;
+    padding-left: 50px;
+    padding-top: 10px;
+  }
   .Half-Car{
     width: 50%;
     height: 300px;
     object-fit: contain;
-    padding-left: 10px;
-    padding-top: 30px;
+    padding-left: 30px;
+    padding-top: 10%;
   }
 
-  .ECU{
-    width: 50%;
-    height: 50%;
+  .Pic{
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    padding-left: 30%;
+    padding-left: 10%;
     padding-top: 30px;
   }
-
+  .Pic-Chip{
+    padding-top:-100px;
+    min-width: 700px;
+    min-height: 700px;
+    object-fit: contain;
+  }
   
   .Small-Image{
     width: 50%;
@@ -119,11 +125,28 @@
  
   }
 
+  .Header-Card
+  {
+    font-size: 17px !important;
+  }
+
+  .Font-Card
+  {
+    font-size: 15px !important;
+  }
   .Errors-Card
-  { 
-    padding-top: 30px;
+  {    
+    padding-top: 10px;
     width: 20%;
     height: 50%;
+    font-size: 15px !important;
+  }
+
+  .Pic-Chart
+  {
+    widows: 300%;;
+    height:300px;
+ 
   }
 
 .row-header {
@@ -146,6 +169,7 @@
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
 }
+
 
 .jumbotron{
     padding: 10px 30px 10px 30px;

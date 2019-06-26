@@ -18,41 +18,296 @@
 <body>
     <header> 
         <div class="Rectangle"> 
-            <div class="col-12 align-items-left" >           
-                <img src="img/logo-full.png" class="Logo---Full" >               
-                <div class="Genealogy">&nbsp;GENEALOGY</div>               
-            </div>           
-        </div>    
-         
+                <div class="col-12 align-items-left" >        
+                        <a href="./index.html">   
+                         <img src="img/logo-2.png" class="Logo---Full" > 
+                        </a>
+                    </div>           
+        </div>                     
     </header>     
 
-    <div class="container col-md-12">      
-        <div class="row">
-            <div class="Half-Car col-md-8">
-                <a href="./genealogy3.html">
-                    <img src="img/car-front.png" class="img-fluid left"  >
-                </a>
-            </div>     
-            <div class="card Errors-Card col-md-4" >
-                <h3 class="card-header bg-primary text-white">Error Information</h3>
-                <div class="card-body">                    
-                    <p class="card-text">ECU Power Shortage</p>                                             
-                </div>  
-                <div>
-                    <a href="./genealogy3.html">
-                        <img src="img/genealogy-2.png" class="img-fluid left"  >
-                    </a>
-                    
-                </div>             
-            </div> 
-        </div> 
-     </div>
-   
+    
+	<div class="col-viwe container col-md-12">    
+            <div class="row">                
+                <div class="card Errors-Card  col-md-8" > 
+                        <img src="img/Chip Float.png" class="Pic img-fluid center"  id=chip-img>
+                    <table class="table table-striped" id=chart-table style="display: none">
+                        <col width="50%">  
+                        <col width="50%">                           
+                        <tr>
+                            <td>
+                                <img src="img/boxplot.png" class="Pic-Chart"/>
+                            </td>
+                            <td>
+                                <img src="img/scatter.png" class="Pic-Chart"/>                 
+                            </td>
+                         </tr>
+                    </table>
+                     
+                     
+                    <div class="Pic img-fluid center col-md-8">                
+                        <!-- <a href="./genealogy7.html">
+                            <img src="img/Chip Float.png" class="Pic img-fluid center"  id=chip-img>
+                        </a>   -->
+                       <!-- style="visibility: hidden" -->
+                       
                
+                    </div>  
+                    <div style="visibility: hidden;" id=related-units-table >
+                            <h2 class="Header-Card">Lot LC_76366 Units</h2>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="active">
+                                        <input type="checkbox" class="select-all checkbox" name="select-all" />
+                                    </th>
+                                    <th class="success">ECID</th>
+                                    <th class="warning">Car Number</th>
+                                    <th class="danger">Car Owner</th>
+                                    <th class="info">Phone Number</th>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <input type="checkbox" class="select-item checkbox" name="select-item" value="1000" />
+                                    </td>
+                                    <td class="success">345-2220-541</td>
+                                    <td class="warning">75-345-31</td>
+                                    <td class="danger">Moshe Tovi</td>
+                                    <td class="info">972526460665</td>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <input type="checkbox" class="select-item checkbox" name="select-item" value="1001" />
+                                    </td>
+                                    <td class="success">748-3773-221</td>
+                                    <td class="warning">23-869-63</td>
+                                    <td class="danger">Hila Sivan</td>
+                                    <td class="info">972549482256</td>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <input type="checkbox" class="select-item checkbox" name="select-item" value="1002" />
+                                    </td>
+                                    <td class="success">945-3563-294</td>
+                                    <td class="warning">54-783-96</td>
+                                    <td class="danger">Avi Barnea</td>
+                                    <td class="info">97252779669</td>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <input type="checkbox" class="select-item checkbox" name="select-item" value="1003" />
+                                    </td>
+                                    <td class="success">345-8675-182 </td>
+                                    <td class="warning">76-378-94</td>
+                                    <td class="danger">Aran Zaiger</td>
+                                    <td class="info">972528979775</td>
+                                </tr>
+                            </table>
+                            <button id="select-all" class="btn btn-primary">Select All/Cancel</button>
+                            <button id="selected" class="btn btn-primary">Recall</button>
+                            <br>
+                            <br>
+                            </body>
+                            <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+                            <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                            <script>
+                                $(function(){
+                            
+                                    //button select all or cancel
+                                    $("#select-all").click(function () {
+                                        var all = $("input.select-all")[0];
+                                        all.checked = !all.checked
+                                        var checked = all.checked;
+                                        $("input.select-item").each(function (index,item) {
+                                            item.checked = checked;
+                                        });
+                                    });
+                            
+                                    //button select invert
+                                    $("#select-invert").click(function () {
+                                        $("input.select-item").each(function (index,item) {
+                                            item.checked = !item.checked;
+                                        });
+                                        checkSelected();
+                                    });
+                            
+                                    //button get selected info
+                                    $("#selected").click(function () {
+                                        var items=[];
+                                        $("input.select-item:checked:checked").each(function (index,item) {
+                                            items[index] = item.value;
+                                        });
+                                        if (items.length < 1) {
+                                            alert("no selected items!!!");
+                                        }else {
+                                            var values = items.join(',');
+                                            console.log(values);
+                                            var html = $("<div></div>");
+                                            html.html("selected:"+values);
+                                            html.appendTo("body");
+                                        }
+                                    });
+                            
+                                    //column checkbox select all or cancel
+                                    $("input.select-all").click(function () {
+                                        var checked = this.checked;
+                                        $("input.select-item").each(function (index,item) {
+                                            item.checked = checked;
+                                        });
+                                    });
+                            
+                                    //check selected items
+                                    $("input.select-item").click(function () {
+                                        var checked = this.checked;
+                                        console.log(checked);
+                                        checkSelected();
+                                    });
+                            
+                                    //check is all selected
+                                    function checkSelected() {
+                                        var all = $("input.select-all")[0];
+                                        var total = $("input.select-item").length;
+                                        var len = $("input.select-item:checked:checked").length;
+                                        console.log("total:"+total);
+                                        console.log("len:"+len);
+                                        all.checked = len===total;
+                                    }
+                                });
+                            </script>
+                            </html>
+                        
+            </div>
+        </div>
+        <div class="card Errors-Card col-md-4" >
+            <h3 class="card-header Header-Card bg-primary text-white">Genealogy Data </h3>
+                    <div class="card-body Font-Card">                    
+                            <p class="card-text">Component: Power Chip</p>
+                            <p class="card-text">Serial Number: E8376978623</p>  
+                            <p class="card-text">Vendor: nVidia</p>   
+                            <p class="card-text">Part Number: 345-2220-541</p>   
+                            <p class="card-text">Lot Code: LC_76366</p> 
+                            <p class="card-text">Date Code: 12/12/2017</p>     
+                            <a onclick="showStatistics()" class="btn btn-primary" role="button" aria-pressed="true" id=showStatBtn>Show Statistics</a>     
+                            <div  id=sta-widgets style="visibility: hidden" style="width: 40%">
+                                    <img src="img/Chip Float.png" class="Pic img-fluid center">
+                                </div>   
+                            <br>
+                            <br>
+                            <br> 
+                            <br>
+                            <br>  
+                            <br>
+                            <br>  
+                            <br>                       
+                            <script>
+                                    function showStatistics() {
+                                        document.getElementById("related-units-table").style.visibility = "visible"; 
+                                        document.getElementById("sta-widgets").style.visibility = "visible"; 
+                                        document.getElementById("chip-img").style.display = "none"; 
+                                        document.getElementById("chart-table").style.display = ''; 
+                                        // let chipImg = document.getElementById("chip-img");
+                                        // chipImg.style.width = "400px"
+                                        // chipImg.style.height = "400px"
+                                        document.getElementById("showStatBtn").style.visibility = "hidden";
+                                        
+                                    }
+                            </script>         
+                    </div>             
+                </div>        
+                
+           
+        </div>
+    
+   
+     <!-- <footer class="footer-def page-footer font-small mdb-color lighten-3 pt-4" style="width:100%; text-align: center;">
 
-    <footer>
-      
-    </footer>
+            <!-- Footer Elements -->
+            <div style="width:1100px; margin:0 auto;">
+            
+                <!--Grid row-->
+                <div class="row">
+            
+                <!--Grid column-->
+                <div class="col-lg-2 col-md-12 mb-4 component-box">
+            
+                    <!--Image-->
+                    <div class="view overlay z-depth-1-half">
+                      
+                        <a href="genealogy7.html" class="img-fluid big-to-small-img">
+                            <img src="img/nvidia_chip.PNG"  class="img-fluid big-to-small-img"
+                            alt="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+            
+                </div>
+                <!--Grid column-->
+                    <i class="fa fa-chevron-right arrow"></i>
+                <!--Grid column-->
+    
+                <div class="col-lg-2 col-md-12 mb-4 component-box">
+            
+                        <!--Image-->
+                        <div class="view overlay z-depth-1-half">
+                               
+                            <a href="genealogy6.html" class="img-fluid big-to-small-img">
+                                    <img src="img/chip_1852.png" class="img-fluid big-to-small-img"
+                                    alt="">
+                                 <div class="mask rgba-white-light"></div>
+                            </a>
+                        </div>
+                
+                        </div>
+                        <!--Grid column-->
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <!--Grid column-->
+    
+                <div class="col-lg-2 col-md-6 mb-4 component-box">
+            
+                    <!--Image-->
+                    <div class="view overlay z-depth-1-half">
+                     
+                    <a href="genealogy5.html" class="img-fluid big-to-small-img">
+                            <img src="img/nvidia_ECU.png" class="img-fluid big-to-small-img"
+                            alt="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                    </div>
+            
+                </div>
+                <!--Grid column-->
+                <i class="fa fa-chevron-right arrow"></i>
+                <!--Grid column-->
+                <div class="col-lg-2 col-md-6 mb-4 component-box">
+            
+                    <!--Image-->
+                    <div class="view overlay z-depth-1-half">     
+                            <img src="img/genealogy-2.png" class="img-fluid"
+                            alt="" onclick="window.open('genealogy3.html')"> 
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                    </div>
+            
+                </div>
+                <!--Grid column-->
+                <i class="fa fa-chevron-right arrow"></i>
+                <!--Grid column-->
+                <div class="col-lg-2 col-md-12 mb-4 component-box">       
+                    <!--Image-->
+                    <div class="view overlay z-depth-1-half">       
+                            <img src="img/full-car.png" class="img-fluid" alt="" onclick="window.open('ErrorList.html')">                                    
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>        
+                </div>
+                <!--Grid column-->
+                
+                </div>
+                <!--Grid row-->
+            
+            </div>
+            <!-- Footer Elements -->
+            
+        </footer> 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
