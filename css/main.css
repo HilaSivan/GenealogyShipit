@@ -1,0 +1,105 @@
+.main-style {
+    background-image: url(/img/group-5.png);
+    background-color: #cccccc;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(https://picsum.photos/2500/1500?image=1041);
+    background-size: cover;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 30rem;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .box h2 {
+    margin: 0 0 0rem;
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5rem;
+  }
+  
+  .box img {
+    margin: 0 0 3rem;
+    padding: 0;
+    width: 50%;
+    margin-left: 25%;
+    color: black;
+    text-align: center;
+  }
+
+  .box .inputBox {
+    position: relative;
+  }
+  
+  .box .inputBox input {
+    width: 100%;
+    padding: 0.625rem 0;
+    font-size: 2.2rem;
+    color: black;
+    letter-spacing: 0.062rem;
+    margin-bottom: 1.875rem;
+    border: none;
+    border-bottom: 0.065rem solid black;
+    outline: none;
+    background: transparent;
+  }
+  
+  .box .inputBox label {
+    position: absolute;
+    padding-top: 10rem;
+    top: 0;
+    left: 0;
+    padding: 0.625rem 0;
+    font-size: 1.30rem;
+    color: black;
+    pointer-events: none;
+    transition: 0.5s;
+    
+}
+  
+  .box .inputBox input:focus ~ label,
+  .box .inputBox input:valid ~ label,
+  .box .inputBox input:not([value=""]) ~ label {
+    top: -1.125rem;
+    left: 0;
+    color: black;
+    font-size: 1rem;
+  }
+  
+  .box input[type="submit"] {
+    border: none;
+    outline: none;
+    color: black;
+    background-color: #03a9f4;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.312rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 38%;
+    
+
+  }
+  
+  .box input[type="submit"]:hover {
+    background-color: #1cb1f5;
+  }

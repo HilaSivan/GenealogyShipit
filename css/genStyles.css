@@ -81,14 +81,15 @@
 
   .Half-Car{
     width: 50%;
-    height: 30%;
+    height: 300px;
     object-fit: contain;
     padding-left: 10px;
-    padding-top: 1px;
+    padding-top: 30px;
   }
 
   .Errors-Card
   { 
+    padding-top: 30px;
     width: 20%;
     height: 50%;
   }
